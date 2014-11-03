@@ -1,0 +1,127 @@
+System.out.println("This program will calculate the number of "
+                + "230 calorie candy bars to eat to maintain your weight");
+        
+        /*Asking user input for thier age height and weight
+        
+         */
+        
+        Scanner input = new Scanner(System.in);
+        System.out.print("\t"+"[Q1] What is your First name? ");
+        String fName=input.next();
+        
+        System.out.print("\t"+"[Q2]Waht is your last name? ");
+        String lName=input.next();
+        //
+        System.out.print("\t"+"[Q3] What is your age in years? ");
+        double age = input.nextDouble();
+        if(age<1||age>125){
+            System.out.println(lName+" "+fName+ "You have entred an invalid entry for age ");
+            System.exit(0);
+            System.out.println("Program ended");
+        }
+        //
+        System.out.print("\t"+"[Q4] What is your total height in inches? ");
+        double height = input.nextDouble();
+        if(height<1||height>108){
+            System.out.println(lName+" "+fName+ "You have entered an invalid entry for height ");
+            System.exit(0);
+            System.out.println("Program ended");
+        }
+        //
+        System.out.print("\t"+"[Q5] What is your weight in pounds? ");
+        double weight = input.nextDouble();
+        if(weight<1||weight>1400){
+            System.out.println(lName+" "+fName+ "You have entered an invalid entry for weight ");
+            System.exit(0);
+            System.out.println("Program ended");
+
+        }
+        //
+        System.out.print("\t"+"[Q6] Enter Male or Female ");
+        String gender = input.next(); 
+        
+        if (!gender.equalsIgnoreCase("female")&&!gender.equalsIgnoreCase("male")){
+            System.out.println("You have enetered an invalid entry for gender ");
+            System.exit(0);
+        }
+        String lowerGender= gender.toLowerCase();
+        System.out.print("\t"+"[Q7] What is your Activity Level? "
+                + "\n" + "A. Sedentary (Little or no exercise) "
+                + "\n" + "B. Moderate (excercise occasionally) "
+                + "\n" + "C. Vigorous (excersize 3-4 days per week) "
+                + "\n" + "D. Extreme (exercize every day");
+        //
+        System.out.print("\n"+"\t"+"Enter Sedentary, Moderate, Vigorous, or Extreme:");
+        
+        String activity = input.next();
+        String lowerActivity= activity.toLowerCase();
+        if (!activity.equalsIgnoreCase("sedentary")
+                &&!activity.equalsIgnoreCase("medrate")
+                &&!activity.equalsIgnoreCase("vigorous")
+                &&!activity.equalsIgnoreCase("extreme")) {
+            System.out.println("You have enetered an invalid entry for activity");
+            System.exit(0);
+        }
+        
+        
+        /*Representing both BMR calculation for female and male
+        as variables instead of copying pasting them over and over agin in each case statement
+         */
+        double BMRF = 655 + (4.3 * weight) + (4.7 * height) - (4.7 * age);
+        double BMRM = 66 + (6.3 * weight) + (12.9 * height) - (6.8 * age);
+        /*
+        A switch stement for gender and anothe switch statement inside for 
+        the type of condition the user is in the percent increase associated with each condition 
+        */
+        switch (lowerGender) {
+            case "female":
+                switch (lowerActivity) {
+                    case "sedentary":
+                        double newBMRF1 = ((BMRF * .20) + BMRF) / 230;
+                        System.out.println(lName+" "+fName+"With these measurements you should eat"
+                                + " " + newBMRF1 + " " + "candy bars per day to maintain the same weight");
+                        break;
+                    case "moderate":
+                        double newBMRF2 = ((BMRF * .30) + BMRF) / 230;
+                        System.out.println(lName+" "+fName+"With these measurements you should eat"
+                                + " " + newBMRF2 + " " + "candy bars per day to maintain the same weight");
+                        break;
+                    case "vigorous":
+                        double newBMRF3 = ((BMRF * .40) + BMRF) / 230;
+                        System.out.println(lName+" "+fName+"With these measurements you should eat"
+                                + " " + newBMRF3 + " " + "candy bars per day to maintain the same weight");
+                        break;
+                    case "extreme":
+                        double newBMRF4 = ((BMRF * .50) + BMRF) / 230;
+                        System.out.println(lName+" "+fName+"With these measurements you should eat"
+                                + " " + newBMRF4 + " " + "candy bars per day to maintain the same weight");
+                        break;
+                }
+                break;
+            case "male":
+                switch (activity) {
+                    case "sedentary":
+                        double newBMRM1 = ((BMRM * .20) + BMRM) / 230;
+                        System.out.println(lName+" "+fName+"With these measurements you should eat"
+                                + " " + newBMRM1 + " " + "candy bars per day to maintain the same weight");
+                        break;
+                    case "moderate":
+                        double newBMRM2 = ((BMRM * .30) + BMRM) / 230;
+                        System.out.println(lName+" "+fName+"With these measurements you should eat"
+                                + " " + newBMRM2 + " " + "candy bars per day to maintain the same weight");
+                        break;
+                    case "vigorous":
+                        double newBMRM3 = ((BMRM * .40) + BMRM) / 230;
+                        System.out.println(lName+" "+fName+"With these measurements you should eat"
+                                + " " + newBMRM3 + " " + "candy bars per day to maintain the same weight");
+                        break;
+                    case "extreme":
+                        double newBMRM4 = ((BMRM * .50) + BMRM) / 230;
+                        System.out.println(lName+" "+fName+"With these measurements you should eat"
+                                + " " + newBMRM4 + " " + "candy bars per day to maintain the same weight");
+                        break;
+                }System.out.println("\n"+"program ended");
+            
+                //System.out.println("\n"+"program ended");
+                break;
+        }
