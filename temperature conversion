@@ -1,0 +1,66 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Practice07;
+
+import java.util.Scanner;
+
+/**
+ *Dennis Anao
+ * Practice 07
+ * 
+ * @author Den Nis
+ */
+public class Practice07 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+       System.out.println("Wellcome to Temple Weather Channel"
+               +"\n"+"Temple Temperature Conversion Program");
+       
+       //precondition:The do while is always true
+       //postconditon:Will ask the use if they want to continue converting
+       do{
+        Scanner keyboard = new Scanner(System.in);
+        System.out.print("\n"+"\t"+"Enter Temperature in degrees:");
+        double tempIn = keyboard.nextDouble(); 
+        
+        System.out.print("\t"+"Enter C,c for celcius or F,f for Fahrenheit:");
+        String inputCF = keyboard.next();
+        
+        /*Representing both fahrenheit and celcius as a variable and 
+        * then using the variables later in if statements
+        */
+        double fahrenheit = (9*(tempIn/5))+32;
+        double celcius = 5*(tempIn-32)/9; 
+       
+        if(inputCF.equalsIgnoreCase("c")){
+           System.out.println("\t"+tempIn+" "+"degree C"
+                   +"\n"+"\t"+"Celcuis to fahrenheit is"+"\n"+"\t"+fahrenheit+" "+"degrees F");  
+          
+       }else if(inputCF.equalsIgnoreCase("f")){
+           System.out.println("\t"+tempIn+" "+"degree F"
+                   +"\n"+"\t"+"fahrenheit to Celcuis is"+"\n"+"\t"+celcius+" "+"degrees C");
+       }
+       else if(!inputCF.equalsIgnoreCase("c")||!inputCF.equalsIgnoreCase("C")){
+           System.out.println("\t"+"units unknown"+"\t"+"\n"+"\t"+"cannot do calculation"
+                   +"\n"+"\t"+"Please next time enter either C,c for celcius or Ff for fahrenheit");
+       }
+        //precondition:Will test if user has inputed q to quit
+        //postcondition:if they have inputed q programs ends
+        System.out.print("\t"+"Enter Q or q to quit or any other character to perform another tempreature conversion:");
+        String quit=keyboard.next();
+        if (quit.equalsIgnoreCase("Q")){
+            System.out.println("Program ended");
+            System.exit(0);   
+        }  
+       }
+       while(true);
+    }
+    }
+
+
