@@ -1,0 +1,147 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package lab08;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author tud17389
+ */
+class HealthRecord {
+
+    private int ssn;
+    private String firstName;
+    private String lastName;
+    private int age;
+    private long phoneNumber;
+    private String email;
+    private double weight;
+    private double height;
+    Scanner healthIn = new Scanner(System.in);
+
+    public HealthRecord(int initialSSN, String initialfirstName, String initiallastName,
+            int initialage, long initialphoneNumber, String initialemail, double initialweight, double initialhieght) {
+        setHealth(initialSSN, initialfirstName, initiallastName,
+                initialage, initialphoneNumber, initialemail, initialweight, initialhieght);
+//   ssn = initialSSN;
+//   firstName=initialfirstName;
+//   lastName=initiallastName;
+//   age=initialage;
+//   phoneNumber=initialphoneNumber;
+//   email=initialemail;
+//   weight=initialweight;
+//   height=initialhieght;
+    }
+//   public Healthrecord(int initialSSN){
+//   setHealth(0,"no name yeat", "no name yet",0,0,0.0,0.0);;
+//   }
+
+    public void readInputs() {
+        System.out.print("Enter your Social Security Number:");
+        ssn = healthIn.nextInt();
+        System.out.print("Enter your First Name");
+        firstName = healthIn.next();
+        System.out.println("Enter your Last Name");
+        lastName = healthIn.next();
+        System.out.println("Enter your age");
+        age = healthIn.nextInt();
+        System.out.println("ENter your phoneNumber");
+        phoneNumber = healthIn.nextLong();
+        System.out.println("Enter your email");
+        email = healthIn.next();
+        System.out.println("Enter your weight");
+        weight = healthIn.nextDouble();
+        System.out.println("Enter your height");
+        height = healthIn.nextDouble();
+    }
+
+    private void setHealth(int newSSN, String newfirstName, String newlastName,
+            int newage, long newphoneNumber, String newemail, double newweight, double newheight) {
+        firstName = newfirstName;
+        lastName = newlastName;
+        email = newemail;
+        if (newSSN < 000000001 || newSSN > 999999999) {
+            System.out.println("You have entered an invalid input for your social security number");
+        }
+        if (newage < 1 || newage > 125) {
+            System.out.println("you have entered an invalid input for age");
+        }
+        if (newphoneNumber < 0000000001 || newphoneNumber > 999999999) {
+            System.out.println("You have entered an invalid entery for phone number");
+        }
+        if (newweight < 1 || newweight > 1400) {
+            System.out.println("You have entered an invalind entry for wieght");
+        }
+        if (newheight < 1 || newheight > 108) {
+            System.out.println("You have entered an invalid entry for height");
+        }
+    }
+
+    public int getSsn() {
+        return ssn;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public long getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
+    public Scanner getHealthIn() {
+        return healthIn;
+    }
+
+    public void calculateBMI(double weight, double height) {
+        double BMI = weight / (height * height) * 703;
+    }
+
+    public void display() {
+
+        System.out.print("\t" + "Your social security number is: " + getSsn());
+        System.out.println(getLastName() + " " + getFirstName());
+        System.out.println("You are " + getAge() + " years old");
+        System.out.println("your phone number is: " + getPhoneNumber());
+        System.out.println("your email is " + getEmail());
+        System.out.println("your weight is " + getWeight());
+        System.out.println("your height is " + getHeight());
+
+    }
+}
+
+public class HealthRecordDemo {
+
+    public static void main(String[] args) {
+        HealthRecord subject1 = new HealthRecord(22222, "dan", "sab", 34, 488585, "eeee", 45.0, 45.0);
+        subject1.display();
+//        subject1.readInputs();
+//        subject1.calculateBMI(34.4,66);
+//        subject1.display();
+    }
+
+}
