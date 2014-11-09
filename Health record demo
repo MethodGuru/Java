@@ -21,50 +21,47 @@ class HealthRecord {
     private String email;
     private double weight;
     private double height;
-    Scanner healthIn = new Scanner(System.in);
+    Scanner input = new Scanner(System.in);
 
-    public HealthRecord(int initialSSN, String initialfirstName, String initiallastName,
-            int initialage, long initialphoneNumber, String initialemail, double initialweight, double initialhieght) {
-        setHealth(initialSSN, initialfirstName, initiallastName,
-                initialage, initialphoneNumber, initialemail, initialweight, initialhieght);
-//   ssn = initialSSN;
-//   firstName=initialfirstName;
-//   lastName=initiallastName;
-//   age=initialage;
-//   phoneNumber=initialphoneNumber;
-//   email=initialemail;
-//   weight=initialweight;
-//   height=initialhieght;
+     public HealthRecord(int newSSN, String newFirstName, String newLastName,
+            int initialage, long newPhoneNumber, String newEmail, double newWeight, double newHieght) {
+        System.out.println("Welcome Health Recods" + "\n");
+        ssn = newSSN;
+        firstName = newFirstName;
+        lastName = newLastName;
+        age = initialage;
+        phoneNumber = newPhoneNumber;
+        email = newEmail;
+        weight = newWeight;
+        height = newHieght;
     }
-//   public Healthrecord(int initialSSN){
-//   setHealth(0,"no name yeat", "no name yet",0,0,0.0,0.0);;
-//   }
-
     public void readInputs() {
-        System.out.print("Enter your Social Security Number:");
-        ssn = healthIn.nextInt();
-        System.out.print("Enter your First Name");
-        firstName = healthIn.next();
-        System.out.println("Enter your Last Name");
-        lastName = healthIn.next();
-        System.out.println("Enter your age");
-        age = healthIn.nextInt();
-        System.out.println("ENter your phoneNumber");
-        phoneNumber = healthIn.nextLong();
-        System.out.println("Enter your email");
-        email = healthIn.next();
-        System.out.println("Enter your weight");
-        weight = healthIn.nextDouble();
-        System.out.println("Enter your height");
-        height = healthIn.nextDouble();
-    }
 
-    private void setHealth(int newSSN, String newfirstName, String newlastName,
+        System.out.println("Welcome Health Recods" + "\n");
+        System.out.print("\t" + "[Q1] Enter your Social Security Number: ");
+        ssn = input.nextInt();
+        System.out.print("\t" + "[Q2] Enter Your First Name: ");
+        firstName = input.next();
+        System.out.print("\t" + "[Q3] Enter Your Last Name: ");
+        lastName = input.next();
+        System.out.print("\t" + "[Q4] Enter Your age: ");
+        age = input.nextInt();
+        System.out.print("\t" + "[Q5] Enter Your Phone Number: ");
+        phoneNumber = input.nextLong();
+        System.out.print("\t" + "[Q6] Enter your Email: ");
+        email = input.next();
+        System.out.print("\t" + "[Q7] Enter Your weigth: ");
+        weight = input.nextDouble();
+        System.out.print("\t" + "[Q8] Enter Your Height: ");
+        height = input.nextDouble();
+    }
+    
+    private void setHealth(int newssn, String newfirstName, String newlastName,
             int newage, long newphoneNumber, String newemail, double newweight, double newheight) {
         firstName = newfirstName;
         lastName = newlastName;
         email = newemail;
-        if (newSSN < 000000001 || newSSN > 999999999) {
+        if (newssn < 000000001 || newssn > 999999999) {
             System.out.println("You have entered an invalid input for your social security number");
         }
         if (newage < 1 || newage > 125) {
@@ -113,23 +110,24 @@ class HealthRecord {
         return height;
     }
 
-    public Scanner getHealthIn() {
-        return healthIn;
-    }
-
-    public void calculateBMI(double weight, double height) {
+    public void calculateBMI() {
         double BMI = weight / (height * height) * 703;
+        System.out.println("\t"+"Your BMI is: "+BMI);
+        System.out.println("");
     }
 
     public void display() {
 
-        System.out.print("\t" + "Your social security number is: " + getSsn());
-        System.out.println(getLastName() + " " + getFirstName());
-        System.out.println("You are " + getAge() + " years old");
-        System.out.println("your phone number is: " + getPhoneNumber());
-        System.out.println("your email is " + getEmail());
-        System.out.println("your weight is " + getWeight());
-        System.out.println("your height is " + getHeight());
+        System.out.println("");
+        System.out.println("\t"+"Social Security Number: "+getSsn());
+        System.out.println("\t"+"First Name: "+getFirstName());
+        System.out.println("\t"+"Last Name: "+getLastName());
+        System.out.println("\t"+"Age: "+getAge());
+        System.out.println("\t"+"Phone Number: "+getPhoneNumber());
+        System.out.println("\t"+"Email: "+getEmail());
+        System.out.println("\t"+"Weight: "+getWeight());
+        System.out.println("\t"+"Height: "+getHeight());
+        
 
     }
 }
@@ -137,10 +135,11 @@ class HealthRecord {
 public class HealthRecordDemo {
 
     public static void main(String[] args) {
-        HealthRecord subject1 = new HealthRecord(22222, "dan", "sab", 34, 488585, "eeee", 45.0, 45.0);
+        HealthRecord subject1 = new HealthRecord(2234533,"Sam","Wall",28,21566879,"well@gmail.com",160,0);
         subject1.display();
+        subject1.calculateBMI();
 //        subject1.readInputs();
-//        subject1.calculateBMI(34.4,66);
+//        subject1.calculateBMI();
 //        subject1.display();
     }
 
