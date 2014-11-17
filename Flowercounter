@@ -1,0 +1,86 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package flowercounter;
+
+import java.util.Scanner;
+
+/**
+ * Dennis Anao 
+ * 11/17/2014 
+ * 1068 
+ * flowerCounter 
+ * lab9
+ * @author tud17389
+ */
+class flower {
+String[] flowers = new String[5];
+double[] price = new double[5];       
+Scanner input = new Scanner(System.in);
+public flower(){
+    //    
+        flowers[0] = "petunia";
+        flowers[1] = "pansy";
+        flowers[2] = "rose";
+        flowers[3] = "violet";
+        flowers[4] = "carnation";   
+    //
+        price[0] = .50;
+        price[1] = .75;
+        price[2] = 1.50;
+        price[3] = .50;
+        price[4] = .80;
+}
+public void readInputs(){
+        //
+        System.out.println("What kind of flower would you like to order?");
+        System.out.print("petunia,pansy,rose,violet,carnation: ");
+        String flower = input.next();
+       
+}
+public double priceComputation(double priceEntry){
+    System.out.print("How many flowers would you like? ");
+     double Entry=input.nextDouble();
+    double total= priceEntry*price;
+}
+}
+
+public class FlowerCounter {
+
+    public static void main(String[] args) {
+        //
+        String[] flowers = new String[5];
+        flowers[0] = "petunia";
+        flowers[1] = "pansy";
+        flowers[2] = "rose";
+        flowers[3] = "violet";
+        flowers[4] = "carnation";
+        //
+        Scanner input = new Scanner(System.in);
+        double[] price = new double[5];
+        price[0] = .50;
+        price[1] = .75;
+        price[2] = 1.50;
+        price[3] = .50;
+        price[4] = .80;
+        //
+        System.out.println("What kind of flower would you like to order?");
+        System.out.print("petunia,pansy,rose,violet,carnation: ");
+        
+        String flower = input.next();
+        //
+        
+        
+        for(int i=0; i<flower.length();i++){
+            System.out.print("How many flowers would you like? ");
+        double priceEntry=input.nextDouble();
+        if(flowers[i].equalsIgnoreCase("petunia")){
+            double total;
+                total = (priceEntry)(price);
+            }
+        }
+    }
+
+}
