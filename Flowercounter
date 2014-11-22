@@ -50,15 +50,14 @@ public double priceComputation(double priceEntry){
 public class FlowerCounter {
 
     public static void main(String[] args) {
-        //
-        String[] flowers = new String[5];
+              String[] flowers = new String[5];
         flowers[0] = "petunia";
         flowers[1] = "pansy";
         flowers[2] = "rose";
         flowers[3] = "violet";
         flowers[4] = "carnation";
         //
-        Scanner input = new Scanner(System.in);
+        
         double[] price = new double[5];
         price[0] = .50;
         price[1] = .75;
@@ -66,20 +65,56 @@ public class FlowerCounter {
         price[3] = .50;
         price[4] = .80;
         //
+        Scanner input = new Scanner(System.in);
         System.out.println("What kind of flower would you like to order?");
         System.out.print("petunia,pansy,rose,violet,carnation: ");
         
         String flower = input.next();
         //
-        
+        System.out.print("How many flowers would you like? ");
+        int numOfflowers=input.nextInt();
         
         for(int i=0; i<flower.length();i++){
-            System.out.print("How many flowers would you like? ");
-        double priceEntry=input.nextDouble();
+            
         if(flowers[i].equalsIgnoreCase("petunia")){
             double total;
-                total = (priceEntry)(price);
+                total = numOfflowers*price[0];
+                System.out.println("Purschaning "+numOfflowers
+                        +" of petunia at .50 each will cost "+ total);
+                break;
             }
+        if(flowers[i].equalsIgnoreCase("pansy")){
+            double total;
+                total = numOfflowers*price[1];
+                System.out.println("Purschaning "+numOfflowers
+                        +" of pansy at .75 each will cost "+ total);
+                break;
+            }
+        if(flowers[i].equalsIgnoreCase("rose")){
+            double total;
+                total = numOfflowers*price[2];
+                System.out.println("Purschaning "+numOfflowers
+                        +" of rose at 1.50 each will cost "+ total);
+                break;
+            }
+        if(flowers[i].equalsIgnoreCase("violet")){
+            double total;
+                total = numOfflowers*price[3];
+                System.out.println("Purschaning "+numOfflowers
+                        +" of violet at .50 each will cost "+ total);
+                break;
+            }
+        if(flowers[i].equalsIgnoreCase("carnation")){
+            double total;
+                total = numOfflowers*price[4];
+                System.out.println("Purschaning "+numOfflowers
+                        +" of carnation at .80 each will cost "+ total);
+                break;
+            }
+        else{
+            System.out.println("Sorry we dont have that flower");
+            break;
+        }
         }
     }
 
