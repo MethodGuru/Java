@@ -1,0 +1,57 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package lab10;
+import java.util.Scanner;
+/**
+ *
+ * @author tud17389
+ */
+ class Arrays2DMethods {
+     
+     public static int[][]readInputs(){
+         System.out.print("How many rows? ");
+         Scanner input= new Scanner(System.in);
+         int rows=input.nextInt();
+         System.out.print("How many columns? ");
+         int columns=input.nextInt();
+          
+         int counter=rows;
+         int counter2=columns;
+         for(int r=0; r<counter;r--){
+         
+         }
+         return;
+     }
+     
+     public static int max(int[][]anArray){
+     return ;
+     }
+     
+     public static void rowSum(int[][]anArry){
+     
+     }
+     
+     public static void columnSum(int[][]anArry){
+         
+     }
+     
+     public static boolean isSquare(int[][]anArray){
+     return false;
+     }
+     
+     public static void displayOutputs(int[][] anArray){
+       
+     }
+ }
+
+   
+     public class Arrays2DDemo{
+    public static void main(String[] args) {
+        
+    }
+    
+}
+ 
