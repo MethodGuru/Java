@@ -10,48 +10,73 @@ import java.util.Scanner;
  * @author tud17389
  */
  class Arrays2DMethods {
-     
-     public static int[][]readInputs(){
-         System.out.print("How many rows? ");
-         Scanner input= new Scanner(System.in);
-         int rows=input.nextInt();
-         System.out.print("How many columns? ");
-         int columns=input.nextInt();
-          
-         int counter=rows;
-         int counter2=columns;
-         for(int r=0; r<counter;r--){
-         
-         }
-         return;
-     }
-     
-     public static int max(int[][]anArray){
-     return ;
-     }
-     
-     public static void rowSum(int[][]anArry){
-     
-     }
-     
-     public static void columnSum(int[][]anArry){
-         
-     }
-     
-     public static boolean isSquare(int[][]anArray){
-     return false;
-     }
-     
-     public static void displayOutputs(int[][] anArray){
-       
-     }
- }
 
-   
-     public class Arrays2DDemo{
-    public static void main(String[] args) {
+    public static int[][] readInputs() {
+        // 
+        System.out.print("How many rows? ");
+        Scanner input = new Scanner(System.in);
+        int rows = input.nextInt();
+        System.out.print("How many columns? ");
+        int columns = input.nextInt();
+        int[][] D = new int[rows][columns];
+        // 
+        int counterR = rows;
+        int counterC = columns;
+        
+
+        for (int row = 0; row < counterR; row++) {
+            for (int col = 0; col < counterC; col++) {
+                System.out.print("Enter "+row+" "+col+":");
+                D[row][col] = input.nextInt();
+            }
+        }
+        return D;
         
     }
-    
+
+    // 
+    public static int max(int[][] anArray) {
+        int minR;
+        int minC;
+        int maxC;
+        int maxR;
+        for (int r=0; r<anArray.length; r++){
+        for (int c=0; c<anArray[][c])
+        }
+        return;
+    }
+
+    //
+
+    public static void rowSum(int[][] anArry) {
+
+    }
+
+    //
+
+    public static void columnSum(int[][] anArry) {
+
+    }
+
+    //
+
+    public static boolean isSquare(int[][] anArray) {
+        return false;
+    }
+
+    //
+
+    public static void displayOutputs(int[][] anArray) {
+
+    }
 }
- 
+
+public class Arrays2DDemo {
+
+    public static void main(String[] args) {
+        Arrays2DMethods test = new Arrays2DMethods();
+        test.readInputs();
+        System.out.println();
+    }
+
+}
